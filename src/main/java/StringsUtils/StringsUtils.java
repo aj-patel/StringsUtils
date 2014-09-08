@@ -4,7 +4,7 @@ package StringsUtils;
  * Hello world!
  *
  */
-public class App 
+public class StringsUtils 
 {
     public static void main( String[] args )
     {
