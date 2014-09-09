@@ -31,8 +31,8 @@ public class StringsUtilsTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+    public void testGetMaximumOccurringCharacter()
     {
-        assertTrue( true );
+        assertTrue( StringsUtils.getMaximumOccurringCharacter("aaaabvcddd") == 'a' );
     }
 }
