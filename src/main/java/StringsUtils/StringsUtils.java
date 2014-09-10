@@ -36,4 +36,41 @@ public class StringsUtils
 			throw new NullPointerException();
 		}
    }
+	
+	/***
+	 * getUniqueCharString(final String inputString)
+	 * This method removes duplicate characters from the String
+	 * @param inputString
+	 * @return String 
+	 */
+	public static String getUniqueCharString(final String inputString){
+		final char[] inputCharArray = inputString.toCharArray();
+		final int countChar[] =new int[59]; 
+		char[] outputArray = new char[inputCharArray.length];
+		int index = 0;
+		for (char c : inputCharArray) {
+			if(countChar[((int)c -64)] ==1){
+				outputArray[index]= c;
+				index++;
+			}
+			countChar[((int)c -64)] = countChar[((int)c -64)]+1;	
+		}
+		return charArraytoString(outputArray);
+	}
+	
+	/***
+	 * charArraytoString(final char[] inputArray)
+	 * API helps in creating String out of character array. Character array is scanned only for the available characters and empty characters are ignored.
+	 * @param inputArray
+	 * @return
+	 */
+	public static String charArraytoString(final char[] inputArray) {
+		String finalResult = new String();
+		for (char c : inputArray) {
+			if(c !='\u0000'){
+				finalResult=finalResult + ((Character)c).toString();
+			}
+		}
+		return finalResult;
+	}
 }
