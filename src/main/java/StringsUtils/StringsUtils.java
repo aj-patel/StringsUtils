@@ -82,6 +82,28 @@ public class StringsUtils
 		return charArraytoString(sourceArray);
 	}
 	
+	/**
+	 * getFirstNonRepeatingCharacter(final String inputString)
+	 * API to find first non-repeating character in the input string(input is fairly a small string, use getFirstNonRepeatingCharacterFromStream(final String inputString) for StringStream
+	 * @param inputString
+	 * @return non-repeating character and if there is none, returns a space character
+	 */
+	public static char getFirstNonRepeatingCharacter(final String inputString){
+		int count[]= new int[256];
+		char inputChar[] = inputString.toCharArray();
+		for (char c : inputChar) {
+			count[(int)c] ++;
+		}
+		
+		for (char c : inputChar) {
+			if(count[(int)c] ==1){
+				return c;
+			}
+		}
+		return ' ';
+	}
+	
+	
 	
 	/***
 	 * charArraytoString(final char[] inputArray)
