@@ -35,4 +35,8 @@ public class StringsUtilsTest
     {
         assertTrue( StringsUtils.getMaximumOccurringCharacter("aaaabvcddd") == 'a' );
     }
+    
+    public void testRemoveCharFromString(){
+    	assertTrue(StringsUtils.removeCharFromString("aaaaaaaaaaaaaaaaaAjay","a").equals("Ajy")) ;
+    }
 }
