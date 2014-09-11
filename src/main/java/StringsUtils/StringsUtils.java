@@ -59,6 +59,31 @@ public class StringsUtils
 	}
 	
 	/***
+	 * This utility helps in removing all the characters present in removalString from sourceString
+	 * @param sourceString
+	 * @param removalString
+	 * @return
+	 */
+	public static String removeCharFromString(final String sourceString, final String removalString){
+		final char[] removalCharArray = removalString.toCharArray();
+		final char[] sourceArray = sourceString.toCharArray();
+		final int countChar[] =new int[59]; 
+		for (char c : removalCharArray) {
+			if(countChar[((int)c -64)] ==0){
+				countChar[((int)c -64)] = countChar[((int)c -64)]+1;
+			}
+		}
+		for (int i=0;i<sourceArray.length;i++) {
+			char c = sourceArray[i];
+			if(countChar[((int)c -64)] !=0){
+				sourceArray[i] ='\u0000';
+			}
+		}
+		return charArraytoString(sourceArray);
+	}
+	
+	
+	/***
 	 * charArraytoString(final char[] inputArray)
 	 * API helps in creating String out of character array. Character array is scanned only for the available characters and empty characters are ignored.
 	 * @param inputArray
