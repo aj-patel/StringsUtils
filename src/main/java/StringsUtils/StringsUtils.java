@@ -103,6 +103,21 @@ public class StringsUtils
 		return ' ';
 	}
 	
+	/***
+	 * isPalindrom(final String  inputString)
+	 * API to find if inputString is a Palindrome
+	 * @param inputString
+	 * @return boolean
+	 */
+	public static boolean isPalindrome(final String  inputString){
+		final char inputStringChar[] = inputString.toCharArray();
+		final int length = (inputString.length());
+		for (int i = 0; i < length/2; i++) {
+			if(inputStringChar[i] != inputStringChar[length-i-1])
+				return false;
+		}
+		return true;
+	}
 	
 	
 	/***
