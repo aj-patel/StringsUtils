@@ -39,4 +39,13 @@ public class StringsUtilsTest
     public void testRemoveCharFromString(){
     	assertTrue(StringsUtils.removeCharFromString("aaaaaaaaaaaaaaaaaAjay","a").equals("Ajy")) ;
     }
+    
+    public void testGetFirstNonRepeatingCharacter(){
+    	assertTrue(StringsUtils.getFirstNonRepeatingCharacter("aaaaaaaaaa\n") =='\n');
+    }
+    
+    public void testIsPalindrome(){
+    	assertTrue(StringsUtils.isPalindrome("aaa"));
+    }
+ 
 }
