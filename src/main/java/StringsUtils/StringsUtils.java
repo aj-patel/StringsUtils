@@ -59,7 +59,7 @@ public class StringsUtils
 	}
 	
 	/***
-	 * This utility helps in removing all the characters present in removalString from sourceString
+	 * Remove all the characters present in removalString from sourceString
 	 * @param sourceString
 	 * @param removalString
 	 * @return
@@ -135,4 +135,14 @@ public class StringsUtils
 		}
 		return finalResult;
 	}
+	
+	/***
+	 * 
+	 */
+	public static int wordCountInString(final String inputString){
+		return inputString.split("([\\W\\s]+)").length;
+	}
+	
+	
+	
 }
