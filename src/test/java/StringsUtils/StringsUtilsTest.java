@@ -45,7 +45,11 @@ public class StringsUtilsTest
     }
     
     public void testIsPalindrome(){
-    	assertTrue(StringsUtils.isPalindrome("aaa"));
+    	assertTrue(StringsUtils.isPalindrome("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa") == false);
+    }
+    
+    public void testWordCountInString(){
+    	assertTrue(StringsUtils.wordCountInString("Hello this is ajay Patel") == 5 );
     }
  
 }
