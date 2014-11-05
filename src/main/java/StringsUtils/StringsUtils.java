@@ -8,6 +8,7 @@ package StringsUtils;
 public class StringsUtils 
 {
 	
+	
 	/***
 	 * getMaximumOcurringCharacter(final String inputString)
 	 * get the maximum occurring character in inputString
@@ -137,12 +138,41 @@ public class StringsUtils
 	}
 	
 	/***
-	 * 
+	 * wordCountInString(final String inputString)
+	 * wordCountInString(final String inputString) gives the word count in a given input string.
+	 * @param inputString
+	 * @return count
 	 */
 	public static int wordCountInString(final String inputString){
 		return inputString.split("([\\W\\s]+)").length;
 	}
 	
-	
-	
+	  public static void permuteString(String beginningString, String endingString) {
+	    if (endingString.length() <= 1)
+	      System.out.println(beginningString + endingString);
+	    else
+	      for (int i = 0; i < endingString.length(); i++) {
+	        try {
+	        	System.out.println("sub from 0 to i "+endingString.substring(0, i));
+	        	System.out.println("end string for i+1"+endingString.substring(i + 1));
+	          String newString = endingString.substring(0, i) + endingString.substring(i + 1);
+	          	System.out.println("new String "+newString);
+	          permuteString(beginningString + endingString.charAt(i), newString);
+	        } catch (StringIndexOutOfBoundsException exception) {
+	          exception.printStackTrace();
+	        }
+	      }
+	  }
+	 public static void permutation(String s) { 
+		  permut("",s);
+		  }
+	static void permut(String firstString, String secondString) { 
+		  if(secondString.length() == 0) {
+		  System.out.println(firstString);
+		  }
+		  else 
+		  for(int i=0;i<secondString.length();i++) {
+		  permut(firstString+secondString.charAt(i),secondString.substring(0,i) + secondString.substring(i+1,secondString.length()));
+		  }
+		  }
 }
