@@ -163,16 +163,29 @@ public class StringsUtils
 	        }
 	      }
 	  }
-	 public static void permutation(String s) { 
-		  permut("",s);
-		  }
-	static void permut(String firstString, String secondString) { 
+	  
+	
+	  /***
+	   * permutation(final String inputString) 
+	   * permutation(final String inputString) prints all permutations of a given string.
+	   * @param inputString
+	   */
+	  public static void permutation(final String inputString) { 
+		  permut("",inputString);
+	  }
+	  
+	  /***
+	   * This is the recursive call for getting permutations of the string.
+	   * @param firstString
+	   * @param secondString
+	   */
+	  private static void permut(String firstString, String secondString) { 
 		  if(secondString.length() == 0) {
-		  System.out.println(firstString);
+			  System.out.println(firstString);
 		  }
 		  else 
-		  for(int i=0;i<secondString.length();i++) {
-		  permut(firstString+secondString.charAt(i),secondString.substring(0,i) + secondString.substring(i+1,secondString.length()));
-		  }
-		  }
+			  for(int i=0;i<secondString.length();i++) {
+				  permut(firstString+secondString.charAt(i),secondString.substring(0,i) + secondString.substring(i+1,secondString.length()));
+			  }
+	  }
 }
